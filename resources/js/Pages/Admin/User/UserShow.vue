@@ -126,6 +126,15 @@
                         </Transition>
                     </div>
                 </form>
+                <form @submit.prevent="userForm.delete(route('admin.user.destroy', user.id))" class="self-end mt-6 space-y-6">
+                    <div class="justify-items-center justify-self-end">
+                        <PrimaryButton :disabled="userForm.processing">Delete</PrimaryButton>
+
+                        <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
+                            <p v-if="userForm.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
+                        </Transition>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -66,7 +66,7 @@ class RegisteredUserController extends Controller
             'permission' => $request->permission
         ]);
 
-        return Redirect::route('admin.user.index');
+        return Redirect::route('admin.user.index', ['users' => User::all()]);
     }
 
     public function update(User $user, Request $request): RedirectResponse
@@ -81,5 +81,14 @@ class RegisteredUserController extends Controller
         $user->update($validatedData);
 
         return Redirect::route('admin.user.show', $user->id);
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return Redirect::route('admin.user.index', [
+            'users' => User::all()
+        ]);
     }
 }

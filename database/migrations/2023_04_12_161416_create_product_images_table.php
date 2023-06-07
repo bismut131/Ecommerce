@@ -15,9 +15,7 @@ return new class extends Migration
     {
         Schema::create('product_images', function (Blueprint $table) {
             $table->id();
-            $table->string('product_sku');
-            $table->foreign('product_sku')->references('sku')->on('product_attribute_values')
-                ->cascadeOnDelete();
+            $table->foreignId('product_id')->cascadeOnDelete();
             $table->string('image');
             $table->timestamps();
         });

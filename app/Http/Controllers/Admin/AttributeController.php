@@ -32,6 +32,34 @@ class AttributeController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Inertia\Response
+     */
+    public function create()
+    {
+        return Inertia::render('Admin/Attribute/Create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request)
+    {
+        $params = $request->validate([
+            'code' => 'required|string',
+            'name' => 'required|string'
+        ]);
+
+        Attribute::create($params);
+
+        return Redirect::route('admin.attribute.index');
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request

@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductAttributeController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +20,7 @@ Route::prefix('admin')->name('admin.')->middleware('guest')->group(function () {
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 });
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(callback: function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
 
@@ -44,5 +46,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(callback: func
 
     Route::resource('brand', BrandController::class)->except('show');
 
-    Route::resource('attribute', AttributeController::class)->except('create','show');
+    Route::resource('attribute', AttributeController::class);
+
+    Route::resource('product', ProductController::class);
+
+    Route::resource('product.productAttribute', ProductAttributeController::class);
 });

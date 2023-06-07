@@ -23,8 +23,8 @@ class AttributeSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('attributes')->insert([
-            'name' => 'sku',
-            'code' => 'sku',
+            'name' => 'brand',
+            'code' => 'brand',
             'is_filterable' => false,
             'created_at' => now(),
             'updated_at' => now(),
@@ -79,13 +79,6 @@ class AttributeSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('attributes')->insert([
-            'name' => 'ram',
-            'code' => 'ram',
-            'is_filterable' => true,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('attributes')->insert([
             'name' => 'additional storage',
             'code' => 'additional_storage',
             'is_filterable' => true,
@@ -121,22 +114,8 @@ class AttributeSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('attributes')->insert([
-            'name' => 'video card model',
-            'code' => 'video_card_model',
-            'is_filterable' => true,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('attributes')->insert([
             'name' => 'hard disk type',
             'code' => 'hard_disk_type',
-            'is_filterable' => true,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('attributes')->insert([
-            'name' => 'hard disk size',
-            'code' => 'hard_disk_size',
             'is_filterable' => true,
             'created_at' => now(),
             'updated_at' => now(),
@@ -149,8 +128,22 @@ class AttributeSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('attributes')->insert([
-            'name' => 'core frequency',
-            'code' => 'core_frequency',
+            'name' => 'category',
+            'code' => 'category',
+            'is_filterable' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('attributes')->insert([
+            'name' => 'matrix type',
+            'code' => 'matrix_type',
+            'is_filterable' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('attributes')->insert([
+            'name' => 'ssd interface',
+            'code' => 'ssd_interface',
             'is_filterable' => true,
             'created_at' => now(),
             'updated_at' => now(),

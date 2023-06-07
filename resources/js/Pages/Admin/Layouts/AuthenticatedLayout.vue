@@ -37,8 +37,13 @@
                                 </NavLink>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('admin.attribute.index')" :active="route().current().startsWith('admin.brand')">
+                                <NavLink :href="route('admin.attribute.index')" :active="route().current().startsWith('admin.attribute')">
                                     Attribute
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink :href="route('admin.product.index')" :active="route().current().startsWith('admin.product')">
+                                    Product
                                 </NavLink>
                             </div>
                         </div>

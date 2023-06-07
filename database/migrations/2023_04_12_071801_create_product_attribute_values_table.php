@@ -16,26 +16,9 @@ return new class extends Migration
         Schema::create('product_attribute_values', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
-            $table->decimal('price');
-            $table->string('sku')->index();
-            $table->string('series');
-            $table->string('release_data');
-            $table->string('weight');
-            $table->string('sim_type');
-            $table->decimal('screen_size');
-            $table->string('operating_system');
-            $table->string('internal_storage');
-            $table->string('ram');
-            $table->string('additional_storage');
-            $table->decimal('main_camera');
-            $table->decimal('front_camera');
-            $table->string('resolution');
-            $table->string('color');
-            $table->string('video_card_model');
-            $table->string('hard_disk_type');
-            $table->integer('hard_disk_size');
-            $table->string('processor_type');
-            $table->string('core_frequency');
+            $table->string('sku_simple');
+            $table->foreignId('attribute_id');
+            $table->string('attribute_value');
             $table->timestamps();
         });
     }
